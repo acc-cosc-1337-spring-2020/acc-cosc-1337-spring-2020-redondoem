@@ -1,11 +1,11 @@
 #include "output.h"
 #include <iostream>
 
-//using std::cout;
+using std::cout;
 
 int main() 
 {
 	cout<<"Hello World!";	
 
-	//return 0;
+	return 0;
 }
