@@ -23,4 +23,5 @@ void display_numbers(int num)
 		std::cout << i + 1 << "/n";
 
 	}
+
 }
