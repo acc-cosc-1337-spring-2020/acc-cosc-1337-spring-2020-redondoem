@@ -8,22 +8,10 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 TEST_CASE("Tests for Gross Pay")
 {
-	REQUIRE(gross_pay(10,15)  == 150);
+	REQUIRE(gross_pay(10, 15) == 150);
 	REQUIRE(gross_pay(5, 20) == 100);
 	REQUIRE(gross_pay(20, 10) == 200);
 	REQUIRE(gross_pay(50, 10) == 550);
-
-}
-TEST_CASE("Test get grade points")
-{
-	REQUIRE(get_grade_points("A") == 4);
-	REQUIRE(get_grade_points("B") == 3);
-	REQUIRE(get_grade_points("C") == 2);
-	REQUIRE(get_grade_points("D") == 1);
-	REQUIRE(get_grade_points("F") == 0);
-	REQUIRE(get_grade_points("G") == -1);
-
-
 
 }
 
