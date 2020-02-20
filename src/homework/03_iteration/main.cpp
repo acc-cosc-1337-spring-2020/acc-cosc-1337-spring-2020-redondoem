@@ -1,3 +1,4 @@
+#include "dna.h"
 //write include statements
 
 //write using statements
