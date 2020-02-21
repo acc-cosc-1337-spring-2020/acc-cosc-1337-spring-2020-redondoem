@@ -47,7 +47,7 @@ int main()
 
 		}
 
-		cout << "Continue: ";
+		cout << "Continue(y/Y): ";
 		cin >> ch;
 		
 	} while ((ch == 'y') || (ch == 'Y'));
