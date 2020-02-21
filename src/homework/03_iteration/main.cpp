@@ -1,8 +1,11 @@
 #include "dna.h"
+#include <iostream>
+#include <string>
 //write include statements
 
 //write using statements
-
+using std::cout;
+using std::cin;
 
 /*
 Write code that prompts user to enter 1 for Get GC Content, 
@@ -13,5 +16,8 @@ user enters a y or Y.
 */
 int main() 
 {
+	int num;
+
 	return 0;
 }
+

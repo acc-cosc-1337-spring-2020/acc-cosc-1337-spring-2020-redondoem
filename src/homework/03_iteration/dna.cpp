@@ -8,8 +8,8 @@ Return quotient.
 */
 double get_gc_content(const std::string& dna)
 {
-	double num = 0;
-	double gc = 0;
+	double num = 0.0;
+	double gc = 0.0;
 
 	for (auto xx : dna)
 	{
@@ -36,9 +36,9 @@ std::string get_reverse_string(std::string dna)
 {
 	std::string reversedna;
 
-	for (std::size_t i = dna.size(); i >= 0; --i)
+	for (auto i = dna.size(); i != 0; --i)
 	{
-		reversedna.push_back(dna[i]);
+		reversedna.push_back(dna[i-1]);
 	}
 	
 	return reversedna;
@@ -80,6 +80,6 @@ std::string get_dna_complement(std::string dna)
 			xx = 'C';
 		}
 	}
-	return std::string();
+	return complimentary;
 }
 
