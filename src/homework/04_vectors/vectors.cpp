@@ -1,11 +1,54 @@
-/*
+#include "vectors.h" /*
 Write a value return function get_max_from_vector with a const reference 
 vector of intsparameter that returns the max value in a vector
 
 @param numbers is a const reference to a vector of integers
 @return the max value in the vector
 */
+int get_max_from_vector(vector<int>& nums)
+{
+	int max = nums[0];
+	
+	for (auto num : nums) 
+	{
+		if (num > max)
+		{
+			max = num; 
+		}
+	}
+	return max;
+}
 
+bool is_prime(int num)
+{
+	if (num <= 1)
+	{
+		return false;
+	}
+
+	for (int integer = 2; integer < num; integer++)
+	{
+		if (num % integer == 0)
+		{
+			return false; 
+		}
+	}
+	return true; 
+}
+
+vector<int> vector_of_primes(int num)
+{
+	vector<int> primes;
+	for (int integer = 0; integer < num; integer++)
+	{
+		if (is_prime(integer))
+		{
+			primes.push_back(integer);
+		}
+	}
+	
+	return primes;
+}
 
 
 /*
