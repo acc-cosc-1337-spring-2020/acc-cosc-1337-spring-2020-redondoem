@@ -11,7 +11,3 @@ void Rect::calculate_area()
 {
 	area = height * width;
 }
-void Rect::get_area()
-{
-	return area
-}

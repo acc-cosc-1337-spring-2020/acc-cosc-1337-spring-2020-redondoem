@@ -1,7 +1,7 @@
 #include "rectangle.h"
 #include <vector>
 #include <iostream>
-
+using std::cout;
 //write include statemetns
 
 /*
@@ -24,8 +24,10 @@ int main()
 
 		cout << act.get_area() << "\n";
 		total += act.get_area();
-		cout << total << "\n";
 	
 	}
+
+	cout << total << "\n";
+
 		return 0;
 }

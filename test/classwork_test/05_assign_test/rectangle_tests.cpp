@@ -12,8 +12,8 @@ TEST_CASE("Test Area")
 	REQUIRE(area.get_area() == 20);
 
 	Rect area1(10, 10);
-	REQUIRE(area.get_area() == 100);
+	REQUIRE(area1.get_area() == 100);
 
 	Rect area2(100, 10);
-	REQUIRE(area.get_area() == 1000);
+	REQUIRE(area2.get_area() == 1000);
 }
