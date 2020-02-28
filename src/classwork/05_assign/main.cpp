@@ -1,3 +1,7 @@
+#include "rectangle.h"
+#include <vector>
+#include <iostream>
+
 //write include statemetns
 
 /*
@@ -12,6 +16,16 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main()
 {
+	std::vector<Rect> Rects{ Rect(4,5), Rect(10,10), Rect(100,10)};
+	int total = 0;
+
+	for (auto act : Rects)
+	{
+
+		cout << act.get_area() << "\n";
+		total += act.get_area();
+		cout << total << "\n";
 	
-	return 0;
+	}
+		return 0;
 }
