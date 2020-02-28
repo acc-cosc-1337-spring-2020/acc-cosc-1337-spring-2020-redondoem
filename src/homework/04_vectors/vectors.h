@@ -9,7 +9,7 @@ const reference vector of ints parameter that returns an int
 @return the max value in the vector
 */
 
-int get_max_from_vector(vector<int>& nums);
+int get_max_from_vector(vector<int>& numbers);
 
 /*
 Write a function prototype named is_prime with an integer parameter 

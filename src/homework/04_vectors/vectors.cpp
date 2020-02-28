@@ -5,18 +5,18 @@ vector of intsparameter that returns the max value in a vector
 @param numbers is a const reference to a vector of integers
 @return the max value in the vector
 */
-int get_max_from_vector(vector<int>& nums)
+int get_max_from_vector(vector<int>& numbers)
 {
-	int max = nums[0];
+	int maximum = numbers[0];
 	
-	for (auto num : nums) 
+	for (auto more : numbers) 
 	{
-		if (num > max)
+		if (more > maximum)
 		{
-			max = num; 
+			maximum = more; 
 		}
 	}
-	return max;
+	return maximum;
 }
 
 bool is_prime(int num)
@@ -38,16 +38,16 @@ bool is_prime(int num)
 
 vector<int> vector_of_primes(int num)
 {
-	vector<int> primes;
+	vector<int> primenumbers;
 	for (int integer = 0; integer < num; integer++)
 	{
 		if (is_prime(integer))
 		{
-			primes.push_back(integer);
+			primenumbers.push_back(integer);
 		}
 	}
 	
-	return primes;
+	return primenumbers;
 }
 
 

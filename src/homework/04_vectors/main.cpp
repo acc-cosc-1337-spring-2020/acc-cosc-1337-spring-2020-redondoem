@@ -15,7 +15,7 @@ Program continues until user decides to exit.
 int main() 
 {
 	vector<int> nums{ 8,4,20,88,66,99 }; 
-	auto ch = 'yes' || 'Yes';
+	auto ch = 'yes';
 	int input;
 	do
 	{
@@ -46,7 +46,7 @@ int main()
 			cout << "incorrect choice, try again \n";
 		}
 
-		cout << "Continue? enter yes";
+		cout << "Continue? enter yes: \n";
 		cin >> ch;
 
 	} while (ch == 'yes' || ch == 'Yes');
