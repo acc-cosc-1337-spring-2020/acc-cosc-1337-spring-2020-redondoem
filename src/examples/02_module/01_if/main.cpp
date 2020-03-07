@@ -4,7 +4,7 @@
 using std::cout;
 using std::cin;
 
-int main() 
+int main()
 {
 	//create a bool variable named even
 	//create an int variable named value
@@ -20,7 +20,6 @@ int main()
 	//and assign its return value to the even variable
 	even = is_even(value);
 
-
 	//display even if number is even
 	if (even == true)
 	{
@@ -30,7 +29,6 @@ int main()
 	{
 		cout << value << " is odd.";
 	}
-
 
 	return 0;
 }
