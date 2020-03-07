@@ -1,4 +1,4 @@
-#ADD_SUBDIRECTORY(01_expressions)
+ADD_SUBDIRECTORY(01_expressions)
 #ADD_SUBDIRECTORY(02_decisions)
 ADD_SUBDIRECTORY(03_iteration)
 ADD_SUBDIRECTORY(04_vectors)
