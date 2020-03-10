@@ -1,64 +1,45 @@
+#include "tic_tac_toe.h"
+
 //cpp
-#include"tic_tac_toe.h"
 
-
-/*void Tic_tac_toe::next_player()
+void TicTacToe::start_game(string first_player)
 {
-	if ()
-	
-}*/
-
-void Tic_tac_toe::start_game(string first_player)
-{
-	next_player = first_player;
-
-	if (next_player == "X")
+	if (first_player == "X" || first_player == "O")
 	{
-		next_player == "O";
+		player = first_player;
+
 	}
 
-	else if (!(next_player == "X" || next_player == "O"))
-	{
-		throw Error("Input must be X or O");
-
-	}
 	else
 	{
-		next_player = "X";
+		throw Error("Invalid Character! Player Must use only X or O.");
 	}
-
 }
 
-void Tic_tac_toe::mark_board(int position)
+void TicTacToe::mark_board(int position)
 {
-	board[position - 1] = next_player;
+	if (position < 1 || position > 9)
+	{
+		throw Error("Position must be between 1 and 9.");
+	}
+
+	if (player == "")
+	{
+		throw Error(" Must start game first.");
+	}
 	set_next_player();
-	if (position < 1 || position < 9)
-	{
-		throw Error(" out of range, position must be more than 1 or less than 9 "); 
-	}
 }
 
-string Tic_tac_toe::get_player() const
+void TicTacToe::set_next_player()
 {
-	return next_player;
-}
 
-void Tic_tac_toe::set_next_player()
-{
-	if (next_player == "X")
+	if (player == "X")
 	{
-		next_player == "O";
+		player = 'O';
 	}
 
-	else if (!(next_player == "X" || next_player == "O"))
-	{
-		throw Error("Input must be X or O");
-
-	}
 	else
 	{
-		next_player = "X";
+		player = 'X';
 	}
-	
 }
