@@ -1,45 +1,66 @@
-#include "tic_tac_toe.h"
-
 //cpp
+#include"tic_tac_toe.h"
 
 void TicTacToe::start_game(string first_player)
 {
 	if (first_player == "X" || first_player == "O")
 	{
 		player = first_player;
-
 	}
-
 	else
 	{
 		throw Error("Invalid Character! Player Must use only X or O.");
 	}
+	player = first_player;
+	clear_board(); 
 }
 
+void TicTacToe::display_board() const
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+
+	}
+
+
+}
 void TicTacToe::mark_board(int position)
 {
 	if (position < 1 || position > 9)
 	{
-		throw Error("Position must be between 1 and 9.");
+		throw Error("Position must be 1 to 9.");
+	}
+	else if (player == "")
+	{
+		throw Error("Game must start first.");
 	}
 
-	if (player == "")
+	pegs[position - 1] = player;
+	set_next_player
+
+}
+		
+
+bool TicTacToe 
+bool TicTacToe::check_board_full()
+{
+	for (std::size_t i = 0; i < pegs.size()++i;)
 	{
-		throw Error(" Must start game first.");
+		if (pegs[i] == " ")
+		{
+			return false; 
+		}
 	}
-	set_next_player();
+	return true; 
 }
 
-void TicTacToe::set_next_player()
+void TicTacToe::clear_board()
 {
-
-	if (player == "X")
+	for (auto &peg : pegs)
 	{
-		player = 'O';
+		peg = " ";
+
 	}
 
-	else
-	{
-		player = 'X';
-	}
 }
