@@ -1,7 +1,20 @@
 //cpp
 #include"tic_tac_toe.h"
-
-void TicTacToe::start_game(string first_player)
+bool Tic_tac_toe::game_over()
+{
+	if (check_column_win() == true || check_row_win() == true || check_diagonal_win() == true)
+	{
+		set_winner();
+		return true;
+	}
+	else if (check_board_full() == true)
+	{
+		winner = "C";
+		return true;
+	}
+	return false;
+}
+void Tic_tac_toe::start_game(string first_player)
 {
 	if (first_player == "X" || first_player == "O")
 	{
@@ -15,17 +28,15 @@ void TicTacToe::start_game(string first_player)
 	clear_board(); 
 }
 
-void TicTacToe::display_board() const
+void Tic_tac_toe::display_board() const
 {
 	for (int i = 0; i < 9; i += 3)
 	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 
 	}
-
-
 }
-void TicTacToe::mark_board(int position)
+void Tic_tac_toe::mark_board(int position)
 {
 	if (position < 1 || position > 9)
 	{
@@ -37,15 +48,66 @@ void TicTacToe::mark_board(int position)
 	}
 
 	pegs[position - 1] = player;
-	set_next_player
-
+	next_player();
 }
-		
 
-bool TicTacToe 
-bool TicTacToe::check_board_full()
+void Tic_tac_toe::next_player()
 {
-	for (std::size_t i = 0; i < pegs.size()++i;)
+	if (player == "X")
+	{
+		player == "O";
+	}
+	else
+	{
+		player == "X";
+	}
+}
+
+bool Tic_tac_toe::check_row_win()
+{
+	for (std::size_t i = 0; i < 3; ++i)
+	{
+		if ((pegs[i] == pegs[i + 1]))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Tic_tac_toe::check_column_win()
+{
+	for (std::size_t j = 0; j < 3; j++)
+	{
+		if (pegs[j] == pegs[j + 3] && pegs[j] == pegs[j + 6])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Tic_tac_toe::check_diagonal_win()
+{
+	for (std::size_t j = 0; j < pegs.size(); j++)
+	{
+		if ((pegs[0] == pegs[4] && pegs[0] == pegs[8]) || pegs[2] == pegs[4] && pegs[2] == pegs[6])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void Tic_tac_toe::set_winner()
+{
+	next_player();
+}
+
+		
+bool Tic_tac_toe::check_board_full()
+{
+	for (std::size_t i=0; i < pegs.size(); ++i)
 	{
 		if (pegs[i] == " ")
 		{
@@ -55,11 +117,11 @@ bool TicTacToe::check_board_full()
 	return true; 
 }
 
-void TicTacToe::clear_board()
+void Tic_tac_toe::clear_board() const
 {
 	for (auto &peg : pegs)
 	{
-		peg = " ";
+		peg == " ";
 
 	}
 

@@ -1,4 +1,5 @@
 #include "bank_account.h"
+#include "savings_account.h"
 #include<iostream>
 #include<vector>
 #include<string>
@@ -7,6 +8,14 @@ using std::cout; using std::cin;
 
 int main()
 {
+	SavingsAccount* s = new SavingsAccount(500);
+	SavingsAccount s{ 90 }; 
+	SavingsAccount s{ 90 };
+	
+	CheckingAccount checking{ 100 }; 
+	CheckingAccount checking1{ 90 };
+
+	std::vector<BankAccount> accounts{ s,c }; 
 
 	/*std::vector<BankAccount> accounts{ BankAccount(100),
 		BankAccount(200) };

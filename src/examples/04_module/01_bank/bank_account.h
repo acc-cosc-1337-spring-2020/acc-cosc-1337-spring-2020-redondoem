@@ -2,7 +2,7 @@
 #include<string>
 #include<iostream>
 
-class BankAccount
+class BankAccount; class SavingsAccount
 {
 public:
 	BankAccount() = default;
@@ -15,6 +15,8 @@ public:
 	friend void display_balance(const BankAccount& b);
 	friend std::ostream& operator<<(std::ostream& out, const BankAccount& b);
 	friend std::istream& operator>>(std::istream& in, BankAccount& b);
+
+
 private:
 	int balance{ 0 };
 	const int min_balance_to_open{ 25 };
