@@ -1,5 +1,6 @@
 #include "bank_account.h"
 #include "savings_account.h"
+#include "customer.h"
 #include<iostream>
 #include<vector>
 #include<string>
@@ -26,7 +27,10 @@ int main()
 
 
 	BankAccount account(500);
-	cin >> account;
+	Customer cust;
+	cust.add_account(account); 
+
+	/*cin >> account;
 	cout << account;
 	display_balance(account);
 
@@ -35,7 +39,7 @@ int main()
 
 	auto amount{ 0 };
 	cout << "\nEnter deposit amount: \n";
-	cin >> amount;
+	cin >> amount;*/
 
 	try
 	{
