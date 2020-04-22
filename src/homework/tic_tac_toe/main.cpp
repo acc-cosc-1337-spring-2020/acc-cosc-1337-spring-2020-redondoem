@@ -1,5 +1,8 @@
-
+# include "Tic_Tac_toe_3.h"
+# include "Tic_Tac_toe_4.h"
 # include "Tic_Tac_toe.h"
+#include "tic_tac_toe_manager.h"
+
 # include <iostream> 
 # include <string>
 
@@ -7,36 +10,53 @@ using std::cout; using std::cin; using std::string;
 
 int main()
 {
-	char cont;
+	Tic_tac_toe_Manager manager;
+	string cont;
 	string player;
+	vector<std::reference_wrapper<Tic_tac_toe>> games;
 	int position{ 0 }; 
-	Tic_tac_toe game;
+	Tic_tac_toe games;
 	bool winner;
 	do
 	{
-		cout << "Enter x or o: ";
-		cin >> player;
-		try {
-			game.start_game(player);
+		int gamers;
+		cout << "Tictactoe 3 or 4";
+		cin >> gamers;
+		Tic_tac_toe_3 games3;
+		Tic_tac_toe_4 game4;
+
+		if (gamers == 3)
+		{
+			games.push_back(game3);
 		}
-		catch (Error a) {
-			cout << a.get_error() << "\n";
+		else if (gamers == 4)
+		{
+			games.push_back(game4);
 		}
-		do {
-			cout << "player " << game.get_player() << " enter position from 1 to 9: ";
-			cin >> position;
-			try {
-				game.mark_board(position);
-				game.display_board();
-				game.game_over();
-				winner = game.game_over();
+
+		reference_wrapper<Tic_tac_toe> ganes = games.back();
+		string player = "y";
+		while (!(player == "O" || player == "X"))
+		{
+			try
+			{
+				cout << "Enter player: ";
+				cin >> player;
+				*games_get().start_game(player);
 			}
-			catch (Error a) {
-				cout << a.get_error() << "\n";
+			catch (Error e)
+			{
+				cout << e.get_error();
 			}
-		} while (winner == false);
-		cout << "player" << game.get_winner << "won ";
-		cout << "press y to restart, press any character to quit: ";
-	} while (cont == 'y' || cont == 'Y');
+		} while (!(games.get_player().game_over());
+
+		manager.save_game(game.get());
+
+		cout << "Winner: " << game.get().get_winner() << "\n";
+		cout << "Enter Y to play again";
+		cin >> cont;
+	} while (cont == "y"); 
+	cout << manager;
+	return 0; 
 
 }

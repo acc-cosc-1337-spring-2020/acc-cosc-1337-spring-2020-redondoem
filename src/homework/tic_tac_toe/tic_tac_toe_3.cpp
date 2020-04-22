@@ -29,3 +29,22 @@ Win diagonally
 3 4 5
 6 7 8
 */
+
+bool Tic_tac_toe_3::check_column_win()
+{
+	if (game_over() == false);
+	{
+
+	}
+	return false;
+}
+
+bool Tic_tac_toe_3::check_row_win()
+{
+	return false;
+}
+
+bool Tic_tac_toe_3::check_diagonal_win()
+{
+	return false;
+}
