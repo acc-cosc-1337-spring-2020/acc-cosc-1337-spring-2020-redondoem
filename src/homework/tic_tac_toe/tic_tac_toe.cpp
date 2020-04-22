@@ -65,9 +65,9 @@ void Tic_tac_toe::next_player()
 
 bool Tic_tac_toe::check_row_win()
 {
-	for (std::size_t i = 0; i < 3; ++i)
+	for (std::size_t i = 0; i < 9; i += 3)
 	{
-		if ((pegs[i] == pegs[i + 1]))
+		if (pegs[i] == pegs[i + 1] && pegs[i + 1] == pegs[i + 2] && pegs[i] != " ")
 		{
 			return true;
 		}
@@ -77,9 +77,10 @@ bool Tic_tac_toe::check_row_win()
 
 bool Tic_tac_toe::check_column_win()
 {
-	for (std::size_t j = 0; j < 3; j++)
+	for (std::size_t i = 0; i < 3; i++)
 	{
-		if (pegs[j] == pegs[j + 3] && pegs[j] == pegs[j + 6])
+		if (pegs[i] == pegs[i + 3] && pegs[i + 3] == pegs[i + 6]
+			&& pegs[i + 6] != " ")
 		{
 			return true;
 		}
@@ -89,12 +90,10 @@ bool Tic_tac_toe::check_column_win()
 
 bool Tic_tac_toe::check_diagonal_win()
 {
-	for (std::size_t j = 0; j < pegs.size(); j++)
+	if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[0] != " " ||
+		pegs[2] == pegs[4] && pegs[4] == pegs[6] && pegs[2] != " ")
 	{
-		if ((pegs[0] == pegs[4] && pegs[0] == pegs[8]) || pegs[2] == pegs[4] && pegs[2] == pegs[6])
-		{
-			return true;
-		}
+		return true;
 	}
 	return false;
 }
@@ -125,4 +124,31 @@ void Tic_tac_toe::clear_board() const
 
 	}
 
+}
+
+std::ostream & operator<<(std::ostream & out, const Tic_tac_toe & t)
+{
+	for (std::size_t i = 0; i < t.pegs.size(); i += sqrt(t.pegs.size()))
+	{
+		out << t.pegs[i] << "|" << t.pegs[i + 1] << "|" << t.pegs[i + 2];
+
+		if (t.pegs.size() == 16)
+		{
+			out << "|" << t.pegs[i + 3];
+		}
+
+		out << "\n";
+	}
+
+	return out;
+}
+
+std::istream& operator>>(std::istream& in, Tic_tac_toe& t)
+{
+	int pos;
+	cout << "Enter position: ";
+	std::cin >> pos;
+	t.mark_board(pos);
+	
+	return in;
 }

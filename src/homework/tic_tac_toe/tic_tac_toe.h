@@ -1,5 +1,7 @@
 //h
-#include "tic_tac_toe_3.h"
+#ifndef  TIC_TAC_TOE_H
+#define  TIC_TAC_TOE_H
+
 
 #include <string>
 #include <vector>
@@ -10,7 +12,7 @@ using std::string; using std::vector;
 class Tic_tac_toe
 {
 public:
-	Tic_tac_toe(int size) : pegs(size*size, " ") {}
+	
 	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
@@ -18,7 +20,7 @@ public:
 	void display_board() const;
 	string get_winner() const { return winner; }
 	friend std::ostream& operator<<(std::ostream& out, const Tic_tac_toe& t);
-	friend std::istream& operator<<(std::ostream& in, Tic_tac_toe& t);
+	friend std::istream& operator>>(std::istream& in, Tic_tac_toe& t);
 
 protected:
 	virtual bool check_column_win();
@@ -48,3 +50,4 @@ private:
 
 };
 
+#endif // ! TIC_TAC_TOE_H

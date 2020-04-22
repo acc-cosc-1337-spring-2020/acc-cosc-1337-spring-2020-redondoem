@@ -3,11 +3,11 @@
 #include "tic_tac_toe_3.h"
 
 
-class Tic_tac_toe_Manager : public Tic_tac_toe
+class Tic_tac_toe_Manager 
 {
 public:
 	friend std::ostream& operator<<(std::ostream& out, const Tic_tac_toe_Manager& manager);
-	void save_game(const Tic_tac_toe b );
+	void save_game(Tic_tac_toe b );
 	void get_winner_total(int& o, int& w, int& t);
 
 
