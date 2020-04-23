@@ -20,3 +20,7 @@ private:
 };
 
 #endif // !1
+
+//doesn't beling to class
+// free function
+void use_vector();
