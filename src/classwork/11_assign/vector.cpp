@@ -27,8 +27,58 @@ Vector::Vector(const Vector & v)
 	{
 		nums[i] = v[i];
 	}
+}
+/*
+Allocate temporary dynamic array of size v (v1)
+Copy v! elements to  temp array
+Deallocate old v2 nums array
+Pooint v2 nums array to temp array
+Set v2 size to v1 size
+return a self copy of vector
+*/
+Vector & Vector::operator=(const Vector & v)
+{
+	int* temp = new int[v.size];
+	
+	for (size_t i = 0; i < v.size; ++i)
+	{
+		temp[i] = v[i];
+	}
+	delete nums;
+
+	nums = temp;
+	size = v.size;
+
+	return *this;
+}
+/*
+Make sure new allocation is greater than space
+Create temporary dynamic array of size new allocation
+Copy values from old memory array to temporary array
+Delete the old memory array
+set nums to temporary memory array
+set space = new alllocation
+*/
+void Vector::Reserve(size_t new_allocation)
+{
+	if (new_allocation <= space)
+	{
+		return;
+	}
+
+	int* temp = new int[new_allocation];
+	for (size_t i = 0; i < size; ++i)
+	{
+		temp[i] = nums[i];
+
+	}
+	delete[] nums;
+
+	space = new_allocation;
+
 
 }
+
 /*release dynamic memory
 Deallocate Memory*/
 Vector::~Vector()
