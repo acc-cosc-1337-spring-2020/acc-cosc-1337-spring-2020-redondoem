@@ -41,7 +41,7 @@ TEST_CASE("Test class copy dynamic heap with 2 variables")
 }
 
 TEST_CASE("Test Vector capacity and reserve")
-{
+{ 
 	Vector v(3);
 	REQUIRE(v.Capacity() == 3);
 	REQUIRE(v.Size() == 3);
