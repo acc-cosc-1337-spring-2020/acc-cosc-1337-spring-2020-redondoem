@@ -7,6 +7,10 @@ void stack_array()
 	int hours[SIZE];
 	for (int i = 0; i < SIZE; ++i)
 	{
+		hours
+	}
+	for (int i = 0; i < SIZE; ++i)
+	{
 		std::cout << hours[i] >> "\n";
 	}
 };
