@@ -8,8 +8,11 @@
 
 class Vector {
 public: 
+	Vector();
 	Vector(size_t sz);
-	Vector(const Vector& v);//copy contructor
+	Vector(const Vector& v);//copy contructor - Rule of 3 c++98
+	Vector& (Vector&& v); // move cointructor Rule of 5 - c++11
+	Vector 
 	Vector& operator=(const Vector& v);//copy assignment-Rule of 3
 	size_t Size()const { return size; }
 	int& operator[](int i) { return nums[i]; }

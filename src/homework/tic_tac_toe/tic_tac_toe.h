@@ -6,8 +6,11 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include<memory>
 using namespace std;
 using std::string; using std::vector;
+using std::unique_ptr; using std::make_unique;
+
 
 class Tic_tac_toe
 {
@@ -21,6 +24,8 @@ public:
 	string get_winner() const { return winner; }
 	friend std::ostream& operator<<(std::ostream& out, const Tic_tac_toe& t);
 	friend std::istream& operator>>(std::istream& in, Tic_tac_toe& t);
+	Tic_tac_toe (int size) : pegs(size*size, " "){}
+	Tic_tac_toe() : pegs(9, " ") {};
 
 protected:
 	virtual bool check_column_win();
